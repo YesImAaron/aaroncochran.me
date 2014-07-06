@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    <script type="text/javascript" src="//use.typekit.net/tpe6wlv.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+<header id="mainHeader" class="site-head">
+    <div class="vertical">
+        <div class="inner clearfix">
+            <a id="logo" href="{{@blog.url}}"><img class="logo" src="{{@blog.logo}}" alt="Aaron Cochran"/></a>
+            <nav id="mainNav" class="mainNav">
+                <ul>
+                    <li><a href="{{@blog.url}}">Home</a></li>
+                    <li><a href="/about-me">About</a></li>
+                    <li><a href="https://twitter.com/YesImAaron">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="{{@blog.url}}/">Aaron Cochran</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
+             <section class="poweredby">Powered by <a class="icon-ghost" href="http://ghost.org">Ghost</a>, fonts by <a href="http://typekit.com">Typekit</a>, cover photo by <a href="https://join.deathtothestockphoto.com">Death to the Stock Photo</a></section>
+        </div>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+
+</body>
+</html>
